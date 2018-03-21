@@ -188,102 +188,110 @@
 //    return 0;
 //}
 
-#include "stdio.h"
-#include <string>
+//#include "stdio.h"
+//#include <string>
+//
+//using namespace std;
+//
+//
+//#define MAX 150
+//
+//char ans[MAX];
+//char b[MAX];
+//char c[MAX];
+//
+//void twobigMul(char a[],char b[]){
+//    memset(c, '0',sizeof(&c));
+//    int i=0;
+//    int j=0;
+//
+//    for(i=0;i<strlen(a);i++){
+//        int great = 0;
+//        for (j=0; j<strlen(b); j++) {
+//            int a1 = (a[i] - '0') ;
+//            int b1 = (b[j]- '0');
+//            int ab = a1 * b1;
+//            int c1 = (c[i+j]- '0');
+//            int result = ( ab+c1 +great);
+//            int left = result % 10;
+//            great =result/ 10;
+//            c[i+j] =  left +'0';
+//        }
+//        c[i+j] = great + '0';
+//    }
+//    c[i+j] = '\0';
+//    memset(ans,'0', sizeof(&ans));
+//    strcpy(ans, c);
+//}
+//
+//void printStr(char c[],int dot){
+//    int len = (int)strlen(c);
+//    int head = len-1;
+//    int rear = 0;
+//
+//
+//    for(int i=0;i<len;i++){
+//        printf("%c",c[i]);
+//    }
+//    printf("\n");
+//}
+//
+//int  findDot(char str[]){
+//    int i=0;
+//    int j = (int)strlen(str);
+//    int dot=-1;
+//    for (i=0; i<j; i++) {
+//        if(str[i]=='.'){
+//            dot = i;
+//        }
+//        if(dot >=0 && i>=dot){
+//            str[i] = str[i+1];
+//        }
+//    }
+//    str[i] = '\0';
+//    return  dot;
+//}
+//
+//void revStr(char str[]){
+//    int i=0;
+//    int j = (int)strlen(str);
+//    j--;
+//    while (i<=j) {
+//        char t = str[i];
+//        str[i++] =str[j];
+//        str[j--] = t;
+//    }
+//
+//}
+//
+//int main(){
+//    int n=0;
+//    while (scanf("%s%d",b,&n)!=EOF) {
+//        int dot = findDot(b);
+//        revStr(b);
+//        if(n<=0){
+//            printf("1\n");
+//            return 0;
+//        }
+//        strcpy(ans, "1");
+//        twobigMul(ans, b);
+//        n--;
+//
+//        int i=0;
+//        for(i=0;i<n;i++){
+//            twobigMul(ans, b);
+//        }
+//        printStr(ans,dot);
+//    }
+//    return 0;
+//}
+//
 
+#include <stdio.h>
 using namespace std;
 
-
-#define MAX 150
-
-char ans[MAX];
-char b[MAX];
-char c[MAX];
-
-void twobigMul(char a[],char b[]){
-    memset(c, '0',sizeof(&c));
-    int i=0;
-    int j=0;
-    
-    for(i=0;i<strlen(a);i++){
-        int great = 0;
-        for (j=0; j<strlen(b); j++) {
-            int a1 = (a[i] - '0') ;
-            int b1 = (b[j]- '0');
-            int ab = a1 * b1;
-            int c1 = (c[i+j]- '0');
-            int result = ( ab+c1 +great);
-            int left = result % 10;
-            great =result/ 10;
-            c[i+j] =  left +'0';
-        }
-        c[i+j] = great + '0';
-    }
-    c[i+j] = '\0';
-    memset(ans,'0', sizeof(&ans));
-    strcpy(ans, c);
-}
-
-void printStr(char c[],int dot){
-    int len = (int)strlen(c);
-    int head = len-1;
-    int rear = 0;
-    
-    
-    for(int i=0;i<len;i++){
-        printf("%c",c[i]);
-    }
-    printf("\n");
-}
-
-int  findDot(char str[]){
-    int i=0;
-    int j = (int)strlen(str);
-    int dot=-1;
-    for (i=0; i<j; i++) {
-        if(str[i]=='.'){
-            dot = i;
-        }
-        if(dot >=0 && i>=dot){
-            str[i] = str[i+1];
-        }
-    }
-    str[i] = '\0';
-    return  dot;
-}
-
-void revStr(char str[]){
-    int i=0;
-    int j = (int)strlen(str);
-    j--;
-    while (i<=j) {
-        char t = str[i];
-        str[i++] =str[j];
-        str[j--] = t;
-    }
-    
-}
-
 int main(){
-    int n=0;
-    while (scanf("%s%d",b,&n)!=EOF) {
-        int dot = findDot(b);
-        revStr(b);
-        if(n<=0){
-            printf("1\n");
-            return 0;
-        }
-        strcpy(ans, "1");
-        twobigMul(ans, b);
-        n--;
-        
-        int i=0;
-        for(i=0;i<n;i++){
-            twobigMul(ans, b);
-        }
-        printStr(ans,dot);
-    }
+    
     return 0;
 }
-
 
